@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Dana"; /*400*/
+    src: local("Dana"),
+      url("../public/fonts/Dana/dana-fanum-regular.woff2") format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Dana Medium"; /*500*/
+    src: local("Dana Medium"),
+      url("../public/fonts/Dana/dana-fanum-medium.woff2") format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Dana DemiBold"; /*600*/
+    src: local("Dana DemiBold"),
+      url("../public/fonts/Dana/dana-fanum-demibold.woff2") format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Morabba Light";
+    src: local("Dana Light"),
+      url("../public/fonts/Morabba/Morabba-Light.woff2") format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Morabba Medium";
+    src: local("Dana Medium"),
+      url("../public/fonts/Morabba/Morabba-Medium.woff2") format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Morabba Bold";
+    src: local("Dana Bold"),
+      url("../public/fonts/Morabba/Morabba-Bold.woff2") format("woff2");
+    font-display: swap;
+  }
+}
+
+@layer components {
+  .submenu_item-active {
+    @apply relative text-orange-300 pr-2.5;
+  }
+
+  .submenu_item-active::after {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #fdba74;
+  }
+
+  .Right {
+    right: 0px;
+  }
+  .-Right {
+    right: -200px;
+  }
+  .Left {
+    left: 0px;
+  }
+  .-Left {
+    left: -200px;
+  }
+  .hidden-o {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .show-o {
+    opacity: 100%;
+    visibility: visible;
+  }
+  .styleScoroll {
+    @apply [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-thumb]:rounded-full;
+  }
+}
